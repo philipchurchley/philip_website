@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", sans-serif;
+   font-weight: 400;
+   font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#play {
+   z-index: 10;
+   position: absolute;
+   pointer-events: auto;
+   color: #ffffff;
+   background-color: black;
+   border-color: white;
+   border-radius: 60%;
+   top: 50%;
+   left: 50%;
+   padding: 7px 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html,
+body {
+   font-family: Arial, sans-serif;
+   scroll-behavior: smooth;
+   height: 100%;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h2 {
+   text-align: center;
+   margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+   position: relative;
+   height: 100vh;
+   /* Full viewport height */
+   width: 100vw;
+   /* Full viewport width */
+   transition: background-color 1s ease;
+   /* Smooth transition for background color */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section {
+   pointer-events: none;
+   z-index: 0;
+   position: absolute;
+   /* Position sections on top of each other */
+   top: 0;
+   left: 0;
+   height: 100vh;
+   /* Full screen height */
+   width: 100vw;
+   /* Full screen width */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 2rem;
+   background-color: #cccccc00;
+   opacity: 0;
+   /* Sections are invisible by default */
+   transform: translateY(100px);
+   /* Start off-screen */
 }
+
+/* 
+.section1 {
+   background-color: lightblue;
+}
+
+.section2 {
+   background-color: lightcoral;
+}
+
+.section3 {
+   background-color: lightgreen;
+}
+
+.section4 {
+   background-color: lightgoldenrodyellow;
+}
+
+.section5 {
+   background-color: lightpink;
+} */
