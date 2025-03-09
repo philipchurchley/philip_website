@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import '../styles/App.css';
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from './Navbar';
@@ -66,6 +66,30 @@ function Projects() {
          .to(".section6", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }) // Animate Section 6 in
    }, []);
 
+   useEffect(() => {
+      const handleScroll = () => {
+         const links = document.querySelectorAll(".project a")
+         links.forEach((link) => {
+            const opacity = getComputedStyle(link.closest(".section")).opacity;
+            if (opacity > 0) {
+               link.style.pointerEvents = "auto";
+            }
+            // when it's invisible
+            else if (opacity === 0) {
+               link.style.pointerEvents = "none";
+            }
+            //console.log(opacity, getComputedStyle(link).pointerEvents)
+         });
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+         window.removeEventListener("scroll", handleScroll);
+      };
+   }, []);
+
+   //https://open-course-test.vercel.app/
    return (
       <>
          <Navbar ref={navRef}></Navbar>
@@ -74,39 +98,59 @@ function Projects() {
                <div className="text-container">
                   <h1>check it out!</h1><br></br>
                   <p>Here you can learn about some of my favorite projects that i've worked on.
-                     Hopefully you find them cool.</p>
+                     Hopefully you find them cool. If you're curious, this app uses client-side dynamic pages
+                     using React.js. Animations were built using GSAP.</p>
                </div>
             </section>
             <section className="section section2">
-               <div className="text-container">
-                  <h2>chinese checkers simulator</h2><br></br>
-                  <p>Welcome to my website! I'm currently a student studying computer science at the University of Michigan and an
-                     incoming SWE intern at Microsoft. I'm originally from the Bay Area, California. I love soccer, food, movies, legos,
-                     cereal, and going on fun adventures.  </p>
+               <div className="text-container project">
+                  <h2>chinese checkers simulator</h2>
+                  <div className="img-center"><img src="/checkers.png" alt="chinese checkers simulator screenshot"></img></div>
+                  <p>Last year, I frequently played "Chinese checkers" using various online simulators. I found these simulators'
+                     bots too easy to beat, so I challenged myself to write a more efficient algorithm. I programmed an A-star search
+                     algorithm for an AI bot that outperforms both myself and other online bots. My app allows for browser play for up to 6 players or bots.
+                     Inspired to delve deeper into AI algorithms, I later implemented AlphaZero for Othello, utilizing machine learning and a monte carlo
+                     tree search. <a href="https://philipchurchley.github.io/chinese_checkers/" target="_blank" rel="noreferrer">Check it out!</a></p><br></br>
+                  <p>Technologies used: javascript, react.js, css, html</p>
                </div>
             </section>
             <section className="section section3">
-               <div className="text-container">
-                  <h2>open course</h2><br></br>
-                  <p>Welcome to my website! I'm currently a student studying computer science at the University of Michigan and an
-                     incoming SWE intern at Microsoft. I'm originally from the Bay Area, California. I love soccer, food, movies, legos,
-                     cereal, and going on fun adventures.  </p>
+               <div className="text-container project">
+                  <h2>open course</h2>
+                  <div className="img-center"><img src="/opencourse.jpg" alt="open coures screenshot"></img></div>
+                  <p>I'm working with VOID Tech to build a student platform that
+                     allows students to post and join study groups and resources for popular courses using an AWS-hosted PostgreSQL database.
+                     The original iteration of this project mostly utilized python flask, jinja2 html templates, and react.js.
+                     We are currently reworking the frontend with Next.js and integrating Supabase for a more seamless experience.
+                     This project has been a great experience in agile development, cross-functional teamwork, and full-stack engineering,
+                     and I'm excited to see it come to life soon. <a href="https://void-tech-um.github.io/" target="_blank" rel="noreferrer">Check it out!</a></p><br></br>
+                  <p>Technologies used: python flask, sql, react.js, next.js, supabase, amazon aws, jinja2</p>
                </div>
             </section>
             <section className="section section4">
-               <div className="text-container">
-                  <h2>cereal corner</h2><br></br>
-                  <p>Welcome to my website! I'm currently a student studying computer science at the University of Michigan and an
-                     incoming SWE intern at Microsoft. I'm originally from the Bay Area, California. I love soccer, food, movies, legos,
-                     cereal, and going on fun adventures.  </p>
+               <div className="text-container project">
+                  <h2>cereal corner</h2>
+                  <div className="img-center"><img src="/corner.jpg" alt="open course screenshot"></img></div>
+                  <p>The Cereal Corner website was created using html, css, and javascript. The "Create your own Cereal Order" generator
+                     operates using ratings of 21 cereals based on the personal experience of 20 years eating cereal almost every day.
+                     Each recommendation is generated using a greedy algorithm that selects cereals with the best value given the user's input.
+                     When the "conserve my money" option is selected, the recommendations are generated using dynamic programming. The
+                     algorithm used is similar to that of the 0-1 knapsack problem, with "weights" determined by each cereal's approximate
+                     price per ounce. <a href="https://philipchurchley.github.io/cereal_corner/index.html" target="_blank" rel="noreferrer">Check it out!</a></p><br></br>
+                  <p>Technologies used: html, css, javascript</p>
                </div>
             </section>
             <section className="section section5">
-               <div className="text-container">
-                  <h2>wolverine sports analytics</h2><br></br>
-                  <p>Welcome to my website! I'm currently a student studying computer science at the University of Michigan and an
-                     incoming SWE intern at Microsoft. I'm originally from the Bay Area, California. I love soccer, food, movies, legos,
-                     cereal, and going on fun adventures.  </p>
+               <div className="text-container project">
+                  <h2>wolverine sports analytics</h2>
+                  <div className="img-center"><img src="/wsa.jpg" alt="graph of clubs' transfer reliance"></img></div>
+                  <p>I worked with WSA to develop a model to analyze the impact of soccer transfers on Premier League teams using data from the past
+                     five seasons. First we collected player statistics from fbref.com and transfermarkt.com using
+                     BeautifulSoup, storing the data in MySQL. Then we computed player scores relative to
+                     positional averages, aggregating them into team season scores to predict league standings. The model achieved
+                     an average error of 2.18 places in the EPL table. Additionally, we ranked transfers based on performance vs.
+                     cost and assessed clubs' efficiency in gaining squad value. <a href="https://www.wolverinesportsanalytics.com/projects/soccer-transfer-market" target="_blank" rel="noreferrer">Check it out!</a></p><br></br>
+                  <p>Technologies used: python, mysql, beautifulsoup, pandas</p>
                </div>
             </section>
             <section className="section section6 footer-section">

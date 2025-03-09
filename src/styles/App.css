@@ -102,6 +102,31 @@ h2 {
    font-size: 1.5rem;
 }
 
+.img-center {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   margin: 20px;
+}
+
+.project p {
+   font-size: 1.3rem;
+}
+
+.project a {
+   z-index: 50;
+}
+
+.text-container img {
+   height: 250px;
+   width: 400px;
+   align-self: center;
+   justify-self: center;
+   padding: 15px;
+   border: 2px solid #3c3c3c;
+   border-radius: 10px;
+}
+
 .list-container {
    display: flex;
    justify-content: space-between;
