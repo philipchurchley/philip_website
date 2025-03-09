@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", sans-serif;
+   font-weight: 400;
+   font-style: normal;
+}
+
+h1 a {
+   text-decoration: none;
+   color: inherit;
+   z-index: 5;
+   pointer-events: auto;
+   transition: transform 0.3s ease;
+   display: inline-block;
+}
+
+h1 a:hover {
+   transform: scale(1.1) rotate(5deg);
+}
+
+#play {
+   z-index: 10;
+   position: absolute;
+   pointer-events: auto;
+   color: #ffffff;
+   background-color: black;
+   border-color: white;
+   border-radius: 20px;
+   top: 50%;
+   left: 50%;
+   padding: 7px 5px;
+}
+
+html,
+body {
+   font-family: Arial, sans-serif;
+   scroll-behavior: smooth;
+   height: 100%;
+}
+
+h2 {
+   text-align: center;
+   margin: 0;
+}
+
+.container {
+   position: relative;
+   height: 100vh;
+   /* Full viewport height */
+   width: 100vw;
+   /* Full viewport width */
+   transition: background-color 1s ease;
+   /* Smooth transition for background color */
+   overflow: hidden;
+}
+
+.section {
+   pointer-events: none;
+   z-index: 0;
+   position: absolute;
+   /* Position sections on top of each other */
+   top: 0;
+   left: 0;
+   height: 100vh;
+   /* Full screen height */
+   width: 100%;
+   /* Full screen width */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 2rem;
+   background-color: #cccccc00;
+   opacity: 0;
+   /* Sections are invisible by default */
+   transform: translateY(100px);
+   /* Start off-screen */
+}
+
+.footer-section {
+   display: flex;
+   flex-direction: column;
+}
+
+.happy {
+   flex: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.text-container {
+   margin: 40px;
+}
+
+.text-container p,
+.text-container li {
+   font-size: 1.5rem;
+}
+
+.list-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   /* Allows stacking on smaller screens */
+   gap: 20px;
+   /* Space between lists */
+   padding: 20px;
+}
+
+.list {
+   flex: 1;
+   min-width: 250px;
+   /* Prevents lists from getting too small */
+   max-width: 400px;
+   background: transparent;
+   padding: 15px;
+   border-radius: 8px;
+   border: 1px solid #ccc;
+}
+
+.list-title {
+   font-size: 1.2rem;
+   font-weight: bold;
+   margin-bottom: 10px;
+}
+
+.list-container ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+.list-container li {
+   padding: 5px 0;
+}
+
+/* Mobile-friendly: Stacks lists on smaller screens */
+@media (max-width: 850px) {
+   .list:nth-of-type(2) {
+      display: none;
+   }
+}

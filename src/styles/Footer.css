@@ -1,0 +1,49 @@
+footer {
+   text-align: center;
+   font-size: 14px;
+   padding: 30px 0;
+}
+
+.footer-content p {
+   margin: 0;
+   font-weight: bold;
+}
+
+.social-links {
+   list-style: none;
+   padding: 0;
+   margin-top: 10px;
+   display: flex;
+   justify-content: center;
+   gap: 15px;
+}
+
+.social-links li {
+   display: inline;
+}
+
+.social-links a {
+   text-decoration: none;
+   color: inherit;
+   font-weight: 500;
+}
+
+.social-links a:hover {
+   text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+   .footer-content p {
+      font-size: 14px;
+   }
+
+   .social-links {
+      flex-wrap: wrap;
+      /* Make sure links can wrap into new rows */
+   }
+
+   .social-links li {
+      flex-basis: 30%;
+      /* Each link will take up 45% of the row on mobile */
+   }
+}

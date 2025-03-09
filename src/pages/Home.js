@@ -1,10 +1,11 @@
 import gsap from "gsap";
-import '../App.css';
+import '../styles/App.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from './Navbar';
 import Footer from './Footer'
+import { Link } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger)
 
 
@@ -46,7 +47,7 @@ function Home() {
       .to(".container", { backgroundColor: "lightcoral", duration: 1, ease: "power3.out" }) // Animate container background color
       .to(".section2", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }) // Animate Section 2 in
       .to(".section2", { opacity: 0, y: -100, duration: 1, ease: "power3.in" }) // Animate Section 2 out
-      .to(".container", { backgroundColor: "lightgreen", duration: 1, ease: "power3.out" }) // Animate container background color
+      .to(".container", { backgroundColor: "#e5f6df", duration: 1, ease: "power3.out" }) // Animate container background color
       .to(".section3", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }) // Animate Section 3 in
       .to(".section3", { opacity: 0, y: -100, duration: 1, ease: "power3.in" }) // Animate Section 3 out
       .to(".container", { backgroundColor: "black", duration: 1, ease: "power3.out" }) // Animate container background color
@@ -99,7 +100,7 @@ function Home() {
     <>
       <Navbar ref={navRef}></Navbar>
       <div className="container" ref={containerRef}>
-        <section className="section section1"><h1>hi, i'm philip</h1></section>
+        <section className="section section1"><h1><Link to="/about">hi, i'm philip</Link></h1></section>
         <section className="section section2"><h2>i'm a developer</h2></section>
         <section className="section section3"><h2>check this out<br></br>&darr;</h2></section>
         <section className="section section4" ref={videoContainerRef}>
@@ -112,13 +113,18 @@ function Home() {
             videoRef.current.play();
             setPlayed(true);
             document.getElementById('play').style.display = "none";
-          }}>play</button>
+          }}>play (it's long)</button>
         </section>
-        <section className="section section5">
-          <p className="happy">feel free to explore my site :)</p>
+        <section className="section section5 footer-section">
+          <div className="text-container happy">
+            <p>
+              feel free to explore my site :)<br></br>
+              <span style={{ fontSize: 15 }}>scroll back up to resume the video</span>
+            </p>
+          </div>
           <Footer></Footer>
         </section>
-      </div>
+      </div >
     </>
   );
 }

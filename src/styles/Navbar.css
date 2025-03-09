@@ -1,0 +1,49 @@
+/* Navbar styles */
+.navbar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 20px;
+   font-size: 16px;
+   text-align: center;
+   background: none;
+   /* Keeps the transparent look */
+   z-index: 1000;
+   /* Higher than other elements */
+   transition: transform 0.3s ease-in-out;
+   /* Smooth animation */
+}
+
+.nav-logo {
+   font-weight: bold;
+   text-decoration: none;
+   color: inherit;
+   font-size: 18px;
+}
+
+.nav-links {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   gap: 20px;
+}
+
+.nav-links li {
+   display: inline;
+}
+
+.nav-links a {
+   text-decoration: none;
+   color: black;
+   /* Adjust color */
+   font-weight: 500;
+}
+
+.nav-links a:hover {
+   text-decoration: underline;
+}
