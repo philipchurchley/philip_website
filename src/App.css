@@ -67,23 +67,67 @@ h2 {
    /* Start off-screen */
 }
 
-/* 
-.section1 {
-   background-color: lightblue;
-}
-
-.section2 {
-   background-color: lightcoral;
-}
-
-.section3 {
-   background-color: lightgreen;
-}
-
-.section4 {
-   background-color: lightgoldenrodyellow;
-}
-
 .section5 {
-   background-color: lightpink;
-} */
+   display: flex;
+   flex-direction: column;
+}
+
+.happy {
+   flex: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.text-container {
+   margin: 40px;
+}
+
+.text-container p,
+.text-container li {
+   font-size: 1.5rem;
+}
+
+.list-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   /* Allows stacking on smaller screens */
+   gap: 20px;
+   /* Space between lists */
+   padding: 20px;
+}
+
+.list {
+   flex: 1;
+   min-width: 250px;
+   /* Prevents lists from getting too small */
+   max-width: 400px;
+   background: transparent;
+   padding: 15px;
+   border-radius: 8px;
+   border: 1px solid #ccc;
+}
+
+.list-title {
+   font-size: 1.2rem;
+   font-weight: bold;
+   margin-bottom: 10px;
+}
+
+.list-container ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+.list-container li {
+   padding: 5px 0;
+}
+
+/* Mobile-friendly: Stacks lists on smaller screens */
+@media (max-width: 768px) {
+   .list:nth-of-type(2) {
+      display: none;
+   }
+}
