@@ -104,7 +104,7 @@ function About() {
             </section>
             <section className="section section3">
                <div className="text-container">
-                  <h2>i'm a developer.</h2><br></br>
+                  <h2>i'm a developer.</h2><br id="dev"></br>
                   <div className="list-container">
                      <div className="list">
                         <p className="list-title">My favorite Languages/Frameworks</p>
