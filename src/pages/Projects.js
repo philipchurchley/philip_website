@@ -129,19 +129,6 @@ function Projects() {
             </section>
             <section className="section section4">
                <div className="text-container project">
-                  <h2>cereal corner</h2>
-                  <div className="img-center"><img src="/corner.jpg" alt="open course screenshot"></img></div>
-                  <p>The Cereal Corner website was created using html, css, and javascript. The "Create your own Cereal Order" generator
-                     operates using ratings of 21 cereals based on the personal experience of 20 years eating cereal almost every day.
-                     Each recommendation is generated using a greedy algorithm that selects cereals with the best value given the user's input.
-                     When the "conserve my money" option is selected, the recommendations are generated using dynamic programming. The
-                     algorithm used is similar to that of the 0-1 knapsack problem, with "weights" determined by each cereal's approximate
-                     price per ounce. <a href="https://philipchurchley.github.io/cereal_corner/index.html" target="_blank" rel="noreferrer">Check it out!</a></p><br></br>
-                  <p>Technologies used: html, css, javascript</p>
-               </div>
-            </section>
-            <section className="section section5">
-               <div className="text-container project">
                   <h2>wolverine sports analytics</h2>
                   <div className="img-center"><img src="/wsa.jpg" alt="graph of clubs' transfer reliance"></img></div>
                   <p>I worked with WSA to develop a model to analyze the impact of soccer transfers on Premier League teams using data from the past
@@ -151,6 +138,19 @@ function Projects() {
                      an average error of 2.18 places in the EPL table. Additionally, we ranked transfers based on performance vs.
                      cost and assessed clubs' efficiency in gaining squad value. <a href="https://www.wolverinesportsanalytics.com/projects/soccer-transfer-market" target="_blank" rel="noreferrer">Check it out!</a></p><br></br>
                   <p>Technologies used: python, mysql, beautifulsoup, pandas</p>
+               </div>
+            </section>
+            <section className="section section5">
+               <div className="text-container project">
+                  <h2>cereal corner</h2>
+                  <div className="img-center"><img src="/corner.jpg" alt="open course screenshot"></img></div>
+                  <p>The Cereal Corner website was created using html, css, and javascript. The "Create your own Cereal Order" generator
+                     operates using ratings of 21 cereals based on the personal experience of 20 years eating cereal almost every day.
+                     Each recommendation is generated using a greedy algorithm that selects cereals with the best value given the user's input.
+                     When the "conserve my money" option is selected, the recommendations are generated using dynamic programming. The
+                     algorithm used is similar to that of the 0-1 knapsack problem, with "weights" determined by each cereal's approximate
+                     price per ounce. <a href="https://philipchurchley.github.io/cereal_corner/index.html" target="_blank" rel="noreferrer">Check it out!</a></p><br></br>
+                  <p>Technologies used: html, css, javascript</p>
                </div>
             </section>
             <section className="section section6 footer-section">
